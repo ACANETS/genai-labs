@@ -13,5 +13,6 @@ Exercises and Labs for EECE.4860/5860 Introduction to Generative AI at UMass Low
 2. [Intel optimized PyTorch on Intel Tiber Cloud](Introduction_to_PyTorch_24.ipynb)
 3. [LLM basics with Hugging Face](LLM_Basics_with_HF.ipynb)
 4. [Gemma model fine tuning](gemma_xpu_finetuning.ipynb)
+5. [Simple LLM inference](simple_llm_inference.ipynb)
 
 ## Labs
