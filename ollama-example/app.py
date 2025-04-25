@@ -10,24 +10,29 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# EECE.4860/5860 Intro to GenAI at UMass Lowell  
-# 
+# EECE.4860/5860 Intro to GenAI at UMass Lowell
+#
 # Ollama example with LangChain toolchain
-# 
+#
 # Author: Sage Lyon
 # Date: April 10, 2025
 
 from langchain_community.document_loaders import PyPDFLoader
-from langchain_experimental.text_splitter import SemanticChunker
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.indexes import VectorstoreIndexCreator
 from langchain_ollama import ChatOllama
+from langgraph.checkpoint.memory import MemorySaver
 from langgraph.prebuilt import create_react_agent
 from langchain_core.tools import tool
 import streamlit as st
 from typing import Annotated
 import tempfile
+import os
+
+# Uncomment if you would like to see debug trace of chains
+# from langchain.globals import set_debug
+# set_debug(True)
 
 # Tools
 from langchain_community.agent_toolkits.load_tools import load_tools
@@ -35,10 +40,6 @@ from langchain_community.tools import DuckDuckGoSearchResults
 tools = load_tools(["stackexchange", "ddg-search", "wikipedia"])
 search_results = DuckDuckGoSearchResults(output_format="list", verbose=True)
 tools.append(search_results)
-
-# Ollama LLM, Embedding, and Memory for agent
-from langchain_ollama import ChatOllama, OllamaEmbeddings
-from langgraph.checkpoint.memory import MemorySaver
 
 llm = ChatOllama(model="llama3.2:3b", temperature=0.1, num_predict=256)
 
@@ -52,7 +53,7 @@ st.write("If you are asking a question related to a document that you uploaded, 
 uploaded_file = st.file_uploader("Upload your PDF file here", type="pdf")
 
 if uploaded_file:
-    with tempfile.NamedTemporaryFile(mode="wb+", delete=True) as temp_file:
+    with tempfile.NamedTemporaryFile(mode="wb+", delete=False) as temp_file:
         temp_file.write(uploaded_file.getvalue())
         temp_file.seek(0)
 
@@ -90,6 +91,9 @@ if uploaded_file:
         return context
 
     tools.append(query_documents)
+
+    temp_file.close()
+    os.unlink(temp_file.name)
 
 
 config = {"configurable": {"thread_id": "1"}}
