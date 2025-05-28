@@ -15,3 +15,7 @@ Exercises and Labs for EECE.4860/5860 Introduction to Generative AI at UMass Low
 4. [Gemma model fine tuning](gemma_xpu_finetuning.ipynb)
 5. [Simple LLM inference](simple_llm_inference.ipynb)
 6. [Toxicity Detector by Meta](Toxicity_Detector_by_Meta.ipynb)
+
+## Labs
+
+1. [Lab 1: Use of LLM, Prompt Engineering and Model Finetuning](Lab1.ipynb)
