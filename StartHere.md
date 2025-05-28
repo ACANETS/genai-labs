@@ -34,9 +34,9 @@ Once your account registration has been approved, you will be able to access the
 
 You can learn about JupyterLab through this [tutorial](https://console.cloud.intel.com/docs/tutorials/jupyter_learning.html).
 
-Some lab assignments and excerises have been validated to work with specific kernels (mostly the "PyTorch GPU" and "PyTorch 2.6" kernels) provided by Intel Tiber Cloud. They Jupyter environment loads only one kernel at a time, based on the specific example notebook that you launch. If you want to use another kernel, you will need to log out of that Jupyter session and launch another example notebook. This means that you must launch an example notebook that uses the "PyTorch GPU" or "PyTorch 2.6" kernel before working on any lab assignments or execerises that require that specific kernel.
+Some lab assignments and excerises have been validated to work with specific kernels (mostly the "PyTorch GPU" and "PyTorch 2.7" kernels) provided by Intel Tiber Cloud. They Jupyter environment loads only one kernel at a time, based on the specific example notebook that you launch. If you want to use another kernel, you will need to log out of that Jupyter session and launch another example notebook. This means that you must launch an example notebook that uses the "PyTorch GPU" or "PyTorch 2.7" kernel before working on any lab assignments or execerises that require that specific kernel.
 
-One of the example notebooks that uses the "PyTorch GPU" kernel is "Simple LLM Inference: Playing with Language Models". Once you navigate to the [notebook dashboard](https://console.cloud.intel.com/learning/notebooks) you will find this notebook under the "AI with Intel Max Series GPU" section (highligted in the image below).
+One of the example notebooks that uses the "PyTorch GPU" kernel is "Simple LLM Inference: Playing with Language Models", and on example notebook that uses the "PyTorch 2.7" kernel is "PyTorch on Intel® GPUs". Once you navigate to the [notebook dashboard](https://console.cloud.intel.com/learning/notebooks) you will find these notebooks under the "AI with Intel Max Series GPU" section (highligted in the image below).
 
 ![Intel Tiber Cloud Notebooks](./imgs/tiber-notebook-dashboard.png)
 
