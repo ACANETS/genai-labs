@@ -28,6 +28,9 @@
     rm -r ~/.local/lib/python3.10
     mv ~/.local/lib/python3.10.bak ~/.local/lib/python3.10
     ```
+5. **Which notebooks do you launch to select either the PyTorch GPU kernel or the PyTorch 2.7 kernel?**
+
+    Please refer to the [Get Started with JupyterLab](https://github.com/ACANETS/genai-labs/blob/main/StartHere.md#get-started-with-jupyterlab) section in the Start Here guide.
 
 
 
