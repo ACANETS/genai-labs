@@ -10,7 +10,9 @@
 
 3. **How to resolve out of memory or insufficent resources errors when running trainer?**
 
-    Make sure you are using memory reduction techniques such as LoRA or QLoRA. Try reducing your training and/or evaluation batch size. If you are only getting an OOM error right before/during the validation, you most likely did not set the `per_device_eval_batch_size` argument or set it too high (https://huggingface.co/docs/transformers/v4.49.0/en/main_classes/trainer#transformers.TrainingArguments.per_device_eval_batch_size).
+    * Make sure that you do not have any other kernels running, as they could also be using GPU memory. On the right hand side below the file broswer tab, there is a tab called "Running Terminals and Kernels". If you navigate to this menu, you can shut down all of the kernels that are not currently in use (see: https://jupyterlab.readthedocs.io/en/stable/user/running.html).
+    * You can try adding the line `torch.xpu.empty_cache()` before the area that is giving the OOM error. This function will release all unoccupied cached memory (see: https://docs.pytorch.org/docs/stable/generated/torch.xpu.empty_cache.html)
+    * Make sure you are using memory reduction techniques such as LoRA or QLoRA. Try reducing your training and/or evaluation batch size. If you are only getting an OOM error right before/during the validation, you most likely did not set the `per_device_eval_batch_size` argument or set it too high (https://huggingface.co/docs/transformers/v4.49.0/en/main_classes/trainer#transformers.TrainingArguments.per_device_eval_batch_size).
 
 4. **How do you resolve runtime errors when importing torch in the PyTorch 2.6 kernel?**
 
