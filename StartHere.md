@@ -1,75 +1,100 @@
-# GenAI Lab Setup Guide
+# GenAI Lab Setup Guide for Jetstream2
 
-This notebook is the one-stop shop for students to get started on the labs.
+## Registering Account
 
-## Introduction to Intel Tiber Cloud
+To be added to a Jetstream2 allocation you must have an NSF ACCESS CI account.
+You can register for an account by following this [guide](access-ci-account-instructions.md). Once you have registered for an
+account, please provide your ACCESS Username to Prof. Luo so that he can add you
+to the allocation.
 
-Intel® Tiber™ AI Cloud offers a cloud compute platform where you develop solutions on the latest Intel® hardware, AI accelerators, and optimized software stacks. The platform helps you:
+## Managing Instances
 
-* Implement AI deployments, developer ecosystems, and benchmark testing
-* Scale AI deployments from virtual machines, single nodes, to super-computing clusters.
-* Leverage integration of open source models, accelerator software, and frameworks
+### Creating Your Instance
 
-### Systems
+After you are added to the allocation, you can access it by visiting Jetstream2's [Exosphere tool](https://jetstream2.exosphere.app), logging in with your ACCESS CI credentials. After you navigate to the allocation, you can then create your instance by clicking on the "Create" menu in the top right corner and selecting "Instance", shown in the image below.
 
-The AI industry insists workload processing meets rapidly evolving demands for increased performance and scalability. Intel® Tiber™ AI Cloud enables you to deploy AI workloads, and manage containerized workflows, virtual machines, and dedicated systems at a competitive price-performance.
+![](imgs/create-instance-dropdown.png)
 
-### Software
+You will be brought to the "Choose an Instance Source" where you can select the image for your instance. We have created a custom image for this course which is named 'genai-labs-image'. This image can be found by selecting "By Image" and searching the image name, shown in the red box in the image below.
 
-Intel supports the growing open software ecosystem for AI and actively contributes to open source projects such as PyTorch and UXL Foundation. Dedicated Intel cloud computing is allocated to support open source projects, enabling you to access the latest AI frameworks and models.
+![](imgs/genai-labs-image.png)
 
-### Services
+After selecting the image, you will be brought to a page to further customize your instance, shown in the images below. Please use your own name for the instance name to make it easier to keep track of who owns which instance. For the instance flavor select 'g3.large'.  <em>Optionally</em>, you can upload your SSH public key to make logging into the instance easier.
 
-As an enterprise user or developer, you may consume computing AI services differently, depending on technical expertise, implementation requirements, or the use case. Our list of services is constantly evolving. Visit our Services.
+![](imgs/create-instance1.png)
+![](imgs/create-instance2.png)
 
-## Sign up free account
+Once you have finished custimizing the instance, you can click the 'Create' button on the lower left. The instance will take some time (around 3-4 minutes) to build. When it is finished building its status will change to 'Ready', which is shown in the image below.
 
-You can sign up for a free account by following [this guide](https://console.cloud.intel.com/docs/guides/get_started.html).
+![](imgs/ready.png)
 
-Once your account registration has been approved, you will be able to access the learning exercises [here](https://console.cloud.intel.com/learning/notebooks).
+### Acessing Your Instances
 
-**Note** : we do not use instances. Instead we use Jupyter Notebooks for the exercises and labs.
+Now that you have a running instance, you should be able to log in. The IP address, username, and password are displayed in the 'Credentials' section on the instance's page, as shown in the image below.
 
-## Get Started with JupyterLab
+![](imgs/password.png)
 
-You can learn about JupyterLab through this [tutorial](https://console.cloud.intel.com/docs/tutorials/jupyter_learning.html).
+You can use the SSH command line tool to remotely log into your sever using the command below. If you are on Windows, you can use PowerShell. If you are on Mac/Linux you can use your default terminal application.
 
-Some lab assignments and excerises have been validated to work with specific kernels (mostly the "PyTorch GPU" and "PyTorch 2.7" kernels) provided by Intel Tiber Cloud. They Jupyter environment loads only one kernel at a time, based on the specific example notebook that you launch. If you want to use another kernel, you will need to log out of that Jupyter session and launch another example notebook. This means that you must launch an example notebook that uses the "PyTorch GPU" or "PyTorch 2.7" kernel before working on any lab assignments or execerises that require that specific kernel.
+```bash
+ssh -L 8888:127.0.0.1:8888 exouser@<Public IP Address of Your Instance>
+```
 
-One of the example notebooks that uses the "PyTorch GPU" kernel is "Simple LLM Inference: Playing with Language Models", and on example notebook that uses the "PyTorch 2.7" kernel is "PyTorch on Intel® GPUs". Once you navigate to the [notebook dashboard](https://console.cloud.intel.com/learning/notebooks) you will find these notebooks under the "AI with Intel Max Series GPU" section (highligted in the image below).
+The argument `-L 8888:127.0.0.1:8888` is important as it enables forwarding of port 8888 between your local machine and your remote instance. Port 8888 is the default port used when running a Jupyter server, which is what you will be using to run the examples and labs from the class.
 
-![Intel Tiber Cloud Notebooks](./imgs/tiber-notebook-dashboard.png)
+After you log into the server, make sure you change your password. This can be done by running the `passwd` command in your shell.
 
-**Note**: any changes that you make to the notebooks will be persistant accross sessions, so it is suggested that you use a version control software (git) to keep track of changes.
+### Shelving Your Instances
+
+**!!!!!! IMPORTANT  !!!!!!**
+
+Our allocation has a fixed number of usage credits, and each instance consumes credits while active. It is very important to shelve your instance when you are not actively using it. Shelving an instance will save its current state before shutting it down and freeing up its resources. When you unshelve your instances all of your files should still be there; however, you should always back up to GitHub just in case.
+
+To shelve your instance, click on the 'Actions' menu on the top left corner and then click 'Shelve'.
+
+![](imgs/shelve1.png)
+
+It will then ask you whether you would like to release the public IP address. If you deselect this option you will have the same IP address assigned to your instance when you decide to start it again. You can then confirm that you would like to shelve the instance by pressing 'Yes'.
+
+![](imgs/shelve2.png)
+
+## Launching JupyterLab
+
+![](imgs/jupyter-labs-urls.png)
+
+You can learn about JupyterLab from the [user guide](https://console.cloud.intel.com/docs/tutorials/jupyter_learning.html) or by trying out a [tutorial](https://docs.jupyter.org/en/latest/start/index.html) from the Jupyter documentation site.
 
 ## Using Git and Github
 
 Once you have a intance running JupyterLab, you can access a terminal by clicking File > New > Terminal on the top left of the toolbar.
 
 Run the following commands to change into your home directory and clone the GenAI course's github repository:
+
 ```
 cd ~
 git clone https://github.com/ACANETS/genai-labs.git
 ```
 
 Here are some basic git commands to help you get started (for a more comprehensive tutorial please see the [W3 Schools Git Tutorial](https://www.w3schools.com/git/default.asp)):
-  * `git status` will display the current state of the working directory (which files have been staged for the next commit, which files have been modified since the last commit.
-  * `git add <file or directory>` will stage a new or modified file/directory for commit.
-  * `git commit -m "Write a message describing changes here"` will commit any changes that have been staged into the repositories history along with a message on what changes have been made.
-  * `git log` displays a commit history of the repository, showing the commit hash, author, date, and commit message.
-  * `git checkout <commit hash>` this command will revert the state of the repository to a previous commit.
+
+* `git status` will display the current state of the working directory (which files have been staged for the next commit, which files have been modified since the last commit.
+* `git add <file or directory>` will stage a new or modified file/directory for commit.
+* `git commit -m "Write a message describing changes here"` will commit any changes that have been staged into the repositories history along with a message on what changes have been made.
+* `git log` displays a commit history of the repository, showing the commit hash, author, date, and commit message.
+* `git checkout <commit hash>` this command will revert the state of the repository to a previous commit.
 
 **Creating/Managing GitHub Repository and Downloading Files for Class Assignments:**
-  1. If not already done, install and configure git on your local machine (see [this guide](https://docs.github.com/en/get-started/getting-started-with-git/set-up-git#setting-up-git)).
-  2. Create private GitHub repository (see [this guide on creating a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository) and [this guide on changing the repository's visability](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility#changing-a-repositorys-visibility)).
-  3. Generate an SSH keypair for authentication (see [this guide](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)).
-  4. Add your public key to your GitHub account (see [this guide](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)).
-  5. Clone your private repository to your local machine using SSH (see [this guide](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository#cloning-a-repository)).
-  6. In the JupyterLab File Browser, right-click on the file you would like to download.
-  7. You will see a popup menu, select the "Download" option in this menu.
-  8. You can then move the file you downloaded to your cloned git repository.
-  9. After you have moved all of your project files, you can add the files (`git add <file or directory>`) commit your changes (`git commit -m "Message describing changes"`).
-  10. You can then push you changes to GitHub by running `git push` inside of your git repository.
+
+1. If not already done, install and configure git on your local machine (see [this guide](https://docs.github.com/en/get-started/getting-started-with-git/set-up-git#setting-up-git)).
+2. Create private GitHub repository (see [this guide on creating a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository) and [this guide on changing the repository's visability](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility#changing-a-repositorys-visibility)).
+3. Generate an SSH keypair for authentication (see [this guide](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)).
+4. Add your public key to your GitHub account (see [this guide](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)).
+5. Clone your private repository to your local machine using SSH (see [this guide](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository#cloning-a-repository)).
+6. In the JupyterLab File Browser, right-click on the file you would like to download.
+7. You will see a popup menu, select the "Download" option in this menu.
+8. You can then move the file you downloaded to your cloned git repository.
+9. After you have moved all of your project files, you can add the files (`git add <file or directory>`) commit your changes (`git commit -m "Message describing changes"`).
+10. You can then push you changes to GitHub by running `git push` inside of your git repository.
 
 ## Frequently Asked Questions and Issues
 
