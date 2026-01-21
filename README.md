@@ -10,11 +10,10 @@ Exercises and Labs for EECE.4860/5860 Introduction to Generative AI at UMass Low
 
 0. [GenAI Lab Setup Guide](StartHere.md)
 1. [Handwritten Digits Recognition](Handwritten_Digit_Recognition.ipynb)
-2. [Intel optimized PyTorch on Intel Tiber Cloud](Introduction_to_PyTorch_24.ipynb)
-3. [LLM basics with Hugging Face](LLM_Basics_with_HF.ipynb)
-4. [Gemma model fine tuning](gemma_xpu_finetuning.ipynb)
-5. [Simple LLM inference](simple_llm_inference.ipynb)
-6. [Toxicity Detector by Meta](Toxicity_Detector_by_Meta.ipynb)
+2. [LLM basics with Hugging Face](LLM_Basics_with_HF.ipynb)
+3. [Gemma model fine tuning](gemma_xpu_finetuning.ipynb)
+4. [Simple LLM inference](simple_llm_inference.ipynb)
+5. [Toxicity Detector by Meta](Toxicity_Detector_by_Meta.ipynb)
 
 ## Labs
 
