@@ -94,7 +94,7 @@ We will be using Jupyter to run exercises and labs in this course. To run a Jupy
 
 ![](imgs/jupyter-labs-urls.png)
 
-You can learn about JupyterLab from the [user guide](https://console.cloud.intel.com/docs/tutorials/jupyter_learning.html) or by trying out a [tutorial](https://docs.jupyter.org/en/latest/start/index.html) from the Jupyter documentation site.
+You can learn about JupyterLab from the [Project Jupyter Documentation](https://docs.jupyter.org/en/latest/) or by trying out the [Try Jupyter tutorial](https://docs.jupyter.org/en/latest/start/index.html).
 
 ## Frequently Asked Questions and Issues
 
