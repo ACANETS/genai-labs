@@ -7,3 +7,7 @@
 2. **How to resolve out of memory or insufficent resources errors when running trainer?**
 
     Make sure you are using memory reduction techniques such as LoRA or QLoRA. Try reducing your training and/or evaluation batch size. If you are only getting an OOM error right before/during the validation, you most likely did not set the `per_device_eval_batch_size` argument or set it too high (https://huggingface.co/docs/transformers/v4.49.0/en/main_classes/trainer#transformers.TrainingArguments.per_device_eval_batch_size).
+
+3. **How to remove cached models to free up storage on your Root Disk?**
+
+   You can run the command `rm -r ~/.cache/huggingface/` in your bash shell to remove all the cached models stored on your instance.
