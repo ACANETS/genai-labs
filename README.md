@@ -5,7 +5,6 @@ Exercises and Labs for EECE.4860/5860 Introduction to Generative AI at UMass Low
 
 **Lab**: a standalone but incomplete Jupyter notebook that focuses on a concept discussed in the class. Students are expected to complete the notebook by adding code or modifying parts of the existing code, execute the notebook and analyze the results. A lab report is required as part of the lab submission. Lab grades will be based on the code submission and lab reports.
 
-
 ## Exercises
 
 0. [GenAI Lab Setup Guide](StartHere.md)
@@ -18,3 +17,7 @@ Exercises and Labs for EECE.4860/5860 Introduction to Generative AI at UMass Low
 ## Labs
 
 1. [Lab 1: Use of LLM, Prompt Engineering and Model Finetuning](Lab1.ipynb)
+
+## FAQs
+
+A collection of [FAQs](faq.md) are available.
