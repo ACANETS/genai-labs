@@ -18,7 +18,8 @@ Exercises and Labs for EECE.4860/5860 Introduction to Generative AI at UMass Low
 
 1. [Lab 1: Use of LLM, Prompt Engineering and Model Finetuning](Lab1.ipynb)
 2. [Lab 2: LoRA Fine-Tuning, Model Evaluation and RLHF](Lab2.ipynb)
-
+3. [Lab 3: RAG and Langchain AI agent](Lab3.ipynb)
+   
 ## FAQs
 
 A collection of [FAQs](faq.md) are available.
