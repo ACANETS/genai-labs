@@ -1,0 +1,10 @@
+{"tid": 0, "task": "Which arXiv paper introduced DeepSeekMath? Answer with the arXiv ID only.", "expected": "2402.03300"}
+{"tid": 1, "task": "How many days after the Lab 2 due date is Lab 3 due? Answer with a number.", "expected": "21"}
+{"tid": 2, "task": "DeepSeek-V3 activates what percentage of its total parameters for each token? Round to one decimal place.", "expected": "5.5"}
+{"tid": 3, "task": "Whisper was trained on how many years of audio (using 365-day years)? Round to one decimal place.", "expected": "77.6"}
+{"tid": 4, "task": "On what date is Homework 3 due? Answer in the form YYYY-MM-DD.", "expected": "2027-04-04"}
+{"tid": 5, "task": "What is (17 * 23) + 4?", "expected": "395"}
+{"tid": 6, "task": "Which arXiv paper proposes the CaMeL defense against prompt injection? Answer with the arXiv ID only.", "expected": "2503.18813"}
+{"tid": 7, "task": "CLIP was trained on how many million image-text pairs? Divide that number by 8 and give the result.", "expected": "50"}
+{"tid": 8, "task": "Which is due first in Spring 2027, Lab 4 or Homework 4? Answer exactly 'Lab 4' or 'Homework 4'.", "expected": "Homework 4"}
+{"tid": 9, "task": "What is the late penalty, in percent, for a lab submitted 3 days late? Answer with a number.", "expected": "12"}

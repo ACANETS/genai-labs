@@ -1,25 +1,35 @@
 # genai-labs
-Exercises and Labs for EECE.4860/5860 Introduction to Generative AI at UMass Lowell
 
-**Exercise**: a standalone, complete implementation that introduces a concept or method, and provides an executable example to demonstrate the concept or method. No code addition or modification is needed.
+Exercises and labs for **EECE.4860/5860 Introduction to Generative AI** at UMass Lowell (Spring 2027).
+Everything runs in Google Colab on the free tier: click a badge, then *File > Save a copy in Drive*.
 
-**Lab**: a standalone but incomplete Jupyter notebook that focuses on a concept discussed in the class. Students are expected to complete the notebook by adding code or modifying parts of the existing code, execute the notebook and analyze the results. A lab report is required as part of the lab submission. Lab grades will be based on the code submission and lab reports.
+**Start here:** [Colab setup guide](setup/COLAB_QUICKSTART.md) · [FAQ](setup/FAQ.md)
 
-## Exercises
-
-0. [GenAI Lab Setup Guide](StartHere.md)
-1. [Handwritten Digits Recognition](Handwritten_Digit_Recognition.ipynb)
-2. [LLM basics with Hugging Face](LLM_Basics_with_HF.ipynb)
-3. [Gemma model fine tuning](gemma_xpu_finetuning.ipynb)
-4. [Simple LLM inference](simple_llm_inference.ipynb)
-5. [Toxicity Detector by Meta](Toxicity_Detector_by_Meta.ipynb)
+- **Exercise:** a complete, runnable notebook that demonstrates one idea. Not graded; no code changes needed.
+- **Lab:** a notebook with `TODO` steps you complete, built-in `[CHECK ...]` lines that tell you whether each step works, and a short report section. Graded; submit the `.ipynb` and a PDF on Canvas.
 
 ## Labs
 
-1. [Lab 1: Use of LLM, Prompt Engineering and Model Finetuning](Lab1.ipynb)
-2. [Lab 2: LoRA Fine-Tuning, Model Evaluation and RLHF](Lab2.ipynb)
-3. [Lab 3: RAG and Langchain AI agent](Lab3.ipynb)
-   
-## FAQs
+| Lab | Topic | Weeks | Open |
+|---|---|---|---|
+| 1 | [LLM inference, decoding, and structured output](labs/lab1/README.md) | 2–5 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/acanets/genai-labs/blob/spring27/labs/lab1/lab1.ipynb) |
+| 2 | [Fine-tuning (LoRA/QLoRA) and RL with verifiable rewards](labs/lab2/README.md) | 5–8 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/acanets/genai-labs/blob/spring27/labs/lab2/lab2.ipynb) |
+| 3 | [Retrieval-augmented generation and a tool-calling agent](labs/lab3/README.md) | 8–11 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/acanets/genai-labs/blob/spring27/labs/lab3/lab3.ipynb) |
+| 4 | [Controlled diffusion, CLIP, and LLM watermarking](labs/lab4/README.md) | 11–14 | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/acanets/genai-labs/blob/spring27/labs/lab4/lab4.ipynb) |
 
-A collection of [FAQs](faq.md) are available.
+## Exercises
+
+| Ex | Topic | Open |
+|---|---|---|
+| 0 | Colab and GPU check | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/acanets/genai-labs/blob/spring27/exercises/ex0_colab_check.ipynb) |
+| 1 | Handwritten digit recognition with PyTorch | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/acanets/genai-labs/blob/spring27/exercises/ex1_mnist.ipynb) |
+| 2 | Hugging Face basics: tokenizers, pipelines, chat templates | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/acanets/genai-labs/blob/spring27/exercises/ex2_hf_basics.ipynb) |
+| 3 | Attention from scratch and a tiny GPT | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/acanets/genai-labs/blob/spring27/exercises/ex3_attention_tiny_gpt.ipynb) |
+| 4 | Efficient inference: quantization, KV cache, speculative decoding | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/acanets/genai-labs/blob/spring27/exercises/ex4_efficient_inference.ipynb) |
+| 5 | Simple RAG | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/acanets/genai-labs/blob/spring27/exercises/ex5_simple_rag.ipynb) |
+| 6 | Text-to-image and image-to-image | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/acanets/genai-labs/blob/spring27/exercises/ex6_text_to_image.ipynb) |
+| 7 | Toxicity classifiers and guard models | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/acanets/genai-labs/blob/spring27/exercises/ex7_toxicity.ipynb) |
+
+## Course helper package
+
+Notebooks install [`genai_utils`](genai_utils/) automatically: `pip install "git+https://github.com/acanets/genai-labs@spring27"`.
